@@ -1,8 +1,22 @@
 // A launch configuration that compiles the extension and then opens it inside a new window
 // "preLaunchTask": "npm"
 {
-	"version": "0.1.0",
+	"version": "2.0.0",
 	"configurations": [
+
+		{
+			"args": [
+				"--extensionDevelopmentPath=${workspaceFolder}"
+			],
+			"name": "Launch Extension",
+			"outFiles": [
+				"${workspaceFolder}/out/**/*.js"
+			],
+			"preLaunchTask": "npm",
+			"request": "launch",
+			"type": "pwa-extensionHost"
+		},
+		
 		{
 			"name": "Launch Extension",
 			"type": "extensionHost",
@@ -11,7 +25,7 @@
 			"args": ["--extensionDevelopmentPath=${workspaceRoot}" ],
 			"stopOnEntry": false,
 			"sourceMaps": true,
-			"outDir": "${workspaceRoot}/out/src",
+			"outFiles": "${workspaceRoot}/out/src/",
 			"preLaunchTask": "publishbuild"
 		},
 		{
@@ -22,7 +36,7 @@
 			"args": ["--extensionDevelopmentPath=${workspaceRoot}", "--extensionTestsPath=${workspaceRoot}/out/test" ],
 			"stopOnEntry": false,
 			"sourceMaps": true,
-			"outDir": "${workspaceRoot}/out/test",
+			"outFiles": "${workspaceRoot}/out/test",
 			"preLaunchTask": "publishall"
 		},
 		{
@@ -33,7 +47,7 @@
 			"args": ["--extensionDevelopmentPath=${workspaceRoot}", "--extensionTestsPath=${workspaceRoot}/out/test-integration" ],
 			"stopOnEntry": false,
 			"sourceMaps": true,
-			"outDir": "${workspaceRoot}/out/test-integration",
+			"outFiles": "${workspaceRoot}/out/test-integration",
 			"preLaunchTask": "publishall"
 		}
 	]
